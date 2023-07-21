@@ -89,7 +89,7 @@ if __name__ == '__main__':
         else:
             print("Некорректная опция, попробуйте еще раз.")
 
-        db_manager.db_close()#close cursor and connection of database
+    db_manager.db_close()#close cursor and connection of database
 
 
 

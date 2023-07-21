@@ -40,7 +40,7 @@ if __name__ == '__main__':
                     items = response.json().get('items')
                     if items:
                         for vacancy in items:
-                            if db_manager.is_vacancy_unique(vacancy['alternate_url']) is False:
+                            if db_manager.is_vacancy_unique(vacancy['alternate_url']) is False: #Check is this vacancy in db already
                                 db_manager.add_vacancy(vacancy)
                                 print(f"Добавлено {vacancy['name']} уникальных вакансий в базу данных")
                                 vacancies += 1
@@ -89,7 +89,7 @@ if __name__ == '__main__':
         else:
             print("Некорректная опция, попробуйте еще раз.")
 
-        db_manager.db_close()
+        db_manager.db_close()#close cursor and connection of database
 
 
 

@@ -44,8 +44,8 @@ class DBManager:
         result = self.cur.fetchall()
         return result
 
-    def get_vacancies_with_higher_salary(self, keyword: str):
-        query = f"SELECT vacancy, MAX(salary) as the_highest_salary FROM vacancy WHERE vacancy = '{keyword}' GROUP BY vacancy;"
+    def get_vacancies_with_higher_salary(self):
+        query = f"SELECT * FROM vacancy WHERE salary = (SELECT MAX(salary) FROM vacancy);"
         self.cur.execute(query)
         result = self.cur.fetchall()
         return result

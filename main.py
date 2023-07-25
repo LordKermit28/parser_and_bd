@@ -71,8 +71,7 @@ if __name__ == '__main__':
                 print(row)
 
         elif user_option == '5':
-            vacancy = input('Введите название вакансии: ').lower()
-            rows = db_manager.get_vacancies_with_higher_salary(vacancy)
+            rows = db_manager.get_vacancies_with_higher_salary()
             for row in rows:
                 print(row)
 
